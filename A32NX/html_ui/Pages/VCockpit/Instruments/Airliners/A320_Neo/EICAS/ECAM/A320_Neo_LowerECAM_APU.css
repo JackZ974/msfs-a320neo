@@ -1,4 +1,5 @@
-﻿:root {
+﻿/* MODIFIED JZ */
+:root {
   --ecamDefaultColour: white;
   --ecamUnitsColour: #009696;
   --ecamValueColour: green;
@@ -46,31 +47,64 @@ a320-neo-lower-ecam-apu {
   font-size: 25px; 
 }
 
-:root #APUFlapOpen {  /* CREATED JZ */
-  fill: var(--ecamValueColour);
-  font-size: 20px;
-}
-:root .WhiteBox {
-  stroke: #ffffff;
-  stroke-width: 2;
-}
-:root #APUGenParams {
+:root #APUGenOff  { /* CREATED JZ */
   fill: var(--ecamDefaultColour);
   font-size: 15px;
 }
+
+
+:root #APUGen { /* CREATED JZ */
+  fill: var(--ecamDefaultColour);
+  /*fill: var(--ecamDefaultColour);*/
+  font-size: 15px;
+}
+
+
+:root #APUGenWarn { /* CREATED JZ */
+  fill: var(--ecamWarningColour);
+  font-size: 15px;
+}
+
 
 :root .APUGenParamsWarn {
   fill: var(--ecamWarningColour);
   font-size: 18px;/* CREATED JZ */
   font-weight: bold;
   font-stretch:ultra-condensed;
-  text-anchor: end !important; 
+  text-anchor: end; /*!important;*/ 
 }
 
+
+:root #APUFlapOpen {  /* CREATED JZ */
+  fill: var(--ecamValueColour);
+  font-size: 20px;
+}
+
+
+:root #APUGenParams {
+  fill: var(--ecamDefaultColour);
+  font-size: 15px;
+}
+
+
+:root .APUGenParamsWarn {
+  fill: var(--ecamWarningColour);
+  font-size: 18px;/* CREATED JZ */
+  font-weight: bold;
+  font-stretch:ultra-condensed;
+  text-anchor: end; /*!important;*/ 
+}
 :root #APUBleed {
   fill: var(--ecamDefaultColour);
   font-size: 15px;
 }
+
+:root .WhiteBox {
+  stroke: #ffffff;
+  stroke-width: 2;
+  fill: none;
+}
+
 :root .APUGenParamValue {
   fill: var(--ecamValueColour);
   font-size: 18px;/* MODIFIED JZ */
