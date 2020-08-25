@@ -29,7 +29,8 @@ a320-neo-lower-ecam-apu {
   height: 100%; }
   a320-neo-lower-ecam-apu text {
     text-anchor: middle;
-    alignment-baseline: central; }
+    /* alignment-baseline: central; */
+   }
 
 /* Gauges */
 #AGauges {
@@ -53,14 +54,14 @@ a320-neo-lower-ecam-apu {
 }
 
 
-:root #APUGen { /* CREATED JZ */
+:root .APUGen { /* CREATED JZ */
   fill: var(--ecamDefaultColour);
   /*fill: var(--ecamDefaultColour);*/
   font-size: 15px;
 }
 
 
-:root #APUGenWarn { /* CREATED JZ */
+:root .APUGenWarn { /* CREATED JZ */
   fill: var(--ecamWarningColour);
   font-size: 15px;
 }
@@ -122,7 +123,8 @@ a320-neo-lower-ecam-apu {
   font-size: 13px;
   text-anchor: start !important; /* MODIFIED JZ */
 }
-}
+
+
 :root .APUGaugeParamUnit {
   fill: var(--ecamUnitsColour);
   font-size: 15px;

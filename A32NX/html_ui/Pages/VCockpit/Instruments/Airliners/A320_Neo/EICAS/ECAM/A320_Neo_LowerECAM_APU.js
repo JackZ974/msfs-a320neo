@@ -50,8 +50,8 @@ var A320_Neo_LowerECAM_APU;
             }
 			
             var currentAPUMasterState = SimVar.GetSimVarValue("FUELSYSTEM VALVE SWITCH:8", "Bool");
-			var currentAPUGenState = SimVar.GetSimVarValue("APU GENERATOR SWITCH:1", "Bool");//JZ Added simconnect varaible to know the status of APU GEN switch
-			
+			var currentAPUGenSwitchState = SimVar.GetSimVarValue("APU GENERATOR SWITCH:1", "Bool");//JZ Added simconnect variable to know the status of APU GEN switch
+			var APUgeneratorStarted = SimVar.GetSimVarValue("APU GENERATOR ACTIVE", "Bool");//JZ Added simconnect variable to know the status of APU GEN 
 			
             if (this.lastAPUMasterState != currentAPUMasterState) {
                 this.lastAPUMasterState = currentAPUMasterState;
@@ -88,7 +88,8 @@ var A320_Neo_LowerECAM_APU;
                 this.APUVolts.textContent = "0";
                 this.APUVolts.setAttribute("class", "APUGenParamValueWarn");
                 this.APUFrequency.textContent = "0";
-				this.APUFrequency.setAttribute("class", "APUGenParamValueWarn");
+                this.APUFrequency.setAttribute("class", "APUGenParamValueWarn");
+                
             }
 
             //Bleed
@@ -101,14 +102,14 @@ var A320_Neo_LowerECAM_APU;
             }
 
             //AVAIL indication & bleed pressure
-            if (APUPctRPM > 99.5 ) { //JZ  Modified APU PCt to 99.5 as per FCOM
+            if (APUPctRPM > 99.5 ) { //JZ  Modified APU PCt from 87% to 99.5 as per FCOM
 				this.APUGen.setAttribute("class", "APUGen");
                 this.APUAvail.setAttribute("visibility", "visible");
-                if (SimVar.GetSimVarValue("APU GENERATOR ACTIVE", "Bool") == 1) this.APUGenAvailArrow.setAttribute("visibility", "visible");
-                else this.APUGenAvailArrow.setAttribute("visibility", "hidden");																																			
-                this.APUBleedPressure.textContent = "35";
+                // if (APUgeneratorStarted== 0) this.APUGenAvailArrow.setAttribute("visibility", "visible");
+                // else this.APUGenAvailArrow.setAttribute("visibility", "hidden");																																			
+                this.APUBleedPressure.textContent = "35"; //<---  TO BE MODIFED AT A LATER TIME WHEN APU BLEED PRESS CAN BE CALCULATED
                 this.APUBleedPressure.setAttribute("class", "APUGenParamValue");
-				if (currentAPUGenState == 0) {
+				if (currentAPUGenSwitchState == 0 && APUgeneratorStarted== 0) {
 					this.APUGenAvailArrow.setAttribute("visibility", "visible");
 				} else {
 					this.APUGenAvailArrow.setAttribute("visibility", "hidden");	
@@ -134,7 +135,7 @@ var A320_Neo_LowerECAM_APU;
 			} else { // APU MASTER ON
 				
 				if (currentAPUGenState == 0) { // APU GEN OFF
-					this.APUGen.setAttribute("class", "inactive");
+					this.APUGen.setAttribute("class", "APUGenWarn");
 					 this.APUGenOff.setAttribute("visibility", "visible");
 					 this.APUGenInfo.setAttribute("visibility", "hidden"); //JZ 
 					 
