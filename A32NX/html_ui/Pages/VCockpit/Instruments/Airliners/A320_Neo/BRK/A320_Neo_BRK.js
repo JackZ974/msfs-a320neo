@@ -22,11 +22,11 @@ var A320_Neo_BRK_Definitions;
     }
     Indicator.ANGLE_MIN = 0;
     Indicator.ANGLE_MAX = 90;
-    Indicator.ARROW_MAIN_LENGTH = 130;// MODFIED 160
-    Indicator.ARROW_HEAD_LENGTH = 68;// MODFIED 28
+    Indicator.ARROW_MAIN_LENGTH = 130;// MODFIED was 160
+    Indicator.ARROW_HEAD_LENGTH = 68;// MODFIED was 28
     Indicator.ARROW_HALF_HEIGHT = 20;
-    Indicator.CIRCLE_RADIUS = 70;// MODFIED
-    // Indicator.CIRCLE_RADIUS = 48;//
+    Indicator.CIRCLE_RADIUS = 70;// MODFIED was 48
+   
     A320_Neo_BRK_Definitions.Indicator = Indicator;
     class OuterArc {
     }
