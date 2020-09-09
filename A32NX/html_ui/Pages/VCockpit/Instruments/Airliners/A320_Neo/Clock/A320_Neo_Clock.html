@@ -1,26 +1,29 @@
-﻿<link rel="stylesheet" href="A320_Neo_BAT.css" />
+﻿<link rel="stylesheet" href="A320_Neo_Clock.css" />
 
-<script type="text/html" id="A320_Neo_BAT">
-
-    <!-- <div id="Electricity" state="off"> JZ: This display is always on-->
-
-    <div id="AlwaysOn" state="on">
-
-        <svg viewBox="0 0 200 100">
-            <text id="BAT1" class="value" x="85%" y="45%">0.0</text>
-            <text class="unit" x="87%" y="24%">v</text>
-            <text id="BAT2" class="value" x=85%" y="95%">0.0</text>
-            <text class="unit" x="87%" y="74%">v</text>
-        </svg>
-
+<script type="text/html" id="A320_Neo_Clock">
+    <div id="Electricity" state="off">
+        <div id="Mainframe">
+            <div id="TopSelector">
+                <div id="TopSelectorValue"></div>
+            </div>
+            <div id="MiddleSelector">
+                <div id="MiddleSelectorValue"></div>
+            </div>
+            <div id="BottomSelector">
+                <div id="BottomSelectorValue"></div>
+            </div>
+        </div>
     </div>
-
 </script>
 
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/Shared/Utils/RadioNav.js"></script>
+
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/FlightPlan.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/FlightPlanManager.js"></script>
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/LogicElements/GeoCalc.js"></script>
+
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/NavSystems/Shared/NavSystem.js"></script>
+
 <script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/Shared/BaseAirliners.js"></script>
-<script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/A320_Neo/BAT/A320_Neo_BAT.js"></script>
+
+<script type="text/html" import-script="/Pages/VCockpit/Instruments/Airliners/A320_Neo/Clock/A320_Neo_Clock.js"></script>
